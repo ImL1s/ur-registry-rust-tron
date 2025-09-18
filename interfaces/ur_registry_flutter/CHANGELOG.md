@@ -1,3 +1,6 @@
+## 0.4.1
+- Updated android build and compile tools
+- Increased min android version to 26
 ## 0.4.0
 - Support Cardano sign message and CIP8 message.
 ## 0.4.0-beta.6
