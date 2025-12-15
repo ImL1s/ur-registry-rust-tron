@@ -11,3 +11,4 @@ mod cardano;
 mod crypto_output;
 mod crypto_account;
 mod crypto_psbt;
+mod tron;

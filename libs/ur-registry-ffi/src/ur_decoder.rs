@@ -65,6 +65,8 @@ pub extern "C" fn ur_decoder_resolve(decoder: &mut Decoder, target_type: PtrStri
         "cardano-catalyst-signature" => crate::cardano::cardano_catalyst_signature::resolve(result),
         "cardano-sign-cip8-data-signature" => crate::cardano::cardano_sign_cip8_data_signature::resolve(result),
         "cardano-sign-data-signature" => crate::cardano::cardano_sign_data_signature::resolve(result),
+        "tron-sign-request" => crate::tron::tron_sign_request::resolve(result),
+        "tron-signature" => crate::tron::tron_signature::resolve(result),
         t => Response::error(format!("type {} is not supported yet", t)).c_ptr(),
     }
 }

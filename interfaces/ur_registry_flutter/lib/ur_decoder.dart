@@ -13,6 +13,8 @@ import 'package:ur_registry_flutter/registries/ethereum/eth_signature.dart';
 import 'package:ur_registry_flutter/registries/extend/crypto_multi_accounts.dart';
 import 'package:ur_registry_flutter/registries/cardano/cardano_sign_cip8_data_signature.dart';
 import 'package:ur_registry_flutter/registries/solana/sol_signature.dart';
+import 'package:ur_registry_flutter/registries/tron/tron_sign_request.dart';
+import 'package:ur_registry_flutter/registries/tron/tron_signature.dart';
 import 'package:ur_registry_flutter/response.dart';
 
 import 'registries/solana/sol_sign_request.dart';
@@ -49,6 +51,9 @@ enum SupportedType {
   cardanoSignCip8DataSignature,
   cardanoCatalystVotingRegistration,
   cardanoCatalystSignature,
+  // tron
+  tronSignRequest,
+  tronSignature,
 }
 
 const _cryptoHDKey = 'crypto-hdkey';
@@ -72,6 +77,10 @@ const _cardanoCatalystVotingRegistration =
     'cardano-catalyst-voting-registration';
 const _cardanoCatalystVotingRegistrationSignature =
     'cardano-catalyst-voting-registration-signature';
+
+// tron
+const _tronSignRequest = 'tron-sign-request';
+const _tronSignature = 'tron-signature';
 
 class URDecoder extends NativeObject {
   late NativeNew nativeNew =
@@ -165,6 +174,15 @@ class URDecoder extends NativeObject {
                 _cardanoCatalystVotingRegistrationSignature.toNativeUtf8())
             .ref;
         return CardanoCatalystSignature(response.getObject());
+      // tron
+      case SupportedType.tronSignRequest:
+        final response =
+            nativeResolve(nativeObject, _tronSignRequest.toNativeUtf8()).ref;
+        return TronSignRequest(response.getObject());
+      case SupportedType.tronSignature:
+        final response =
+            nativeResolve(nativeObject, _tronSignature.toNativeUtf8()).ref;
+        return TronSignature(response.getObject());
       default:
         throw Exception("type $type is not supported");
     }
