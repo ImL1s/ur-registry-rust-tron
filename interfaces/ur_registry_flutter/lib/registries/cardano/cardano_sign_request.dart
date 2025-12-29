@@ -33,13 +33,15 @@ class CardanoSignRequest extends NativeObject {
       .lookup<NativeFunction<NativeConstruct>>("${nativePrefix}_construct") //
       .asFunction<Construct>();
   late NativeGetUREncoder nativeGetUREncoder = lib
-      .lookup<NativeFunction<NativeGetUREncoder>>("${nativePrefix}_get_ur_encoder") //
+      .lookup<NativeFunction<NativeGetUREncoder>>(
+          "${nativePrefix}_get_ur_encoder") //
       .asFunction();
   late NativeNew nativeNew = lib
       .lookup<NativeFunction<NativeNew>>("${nativePrefix}_new") //
       .asFunction();
   late NativeGetRequestId nativeGetRequestId = lib
-      .lookup<NativeFunction<NativeGetRequestId>>("${nativePrefix}_get_request_id") //
+      .lookup<NativeFunction<NativeGetRequestId>>(
+          "${nativePrefix}_get_request_id") //
       .asFunction();
 
   late String uuid;

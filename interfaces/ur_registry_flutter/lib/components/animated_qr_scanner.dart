@@ -70,7 +70,8 @@ class AnimatedQRScanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (BuildContext context) => _Cubit(target, onSuccess, onFailed, overlay: overlay),
+      create: (BuildContext context) =>
+          _Cubit(target, onSuccess, onFailed, overlay: overlay),
       child: _AnimatedQRScanner(),
     );
   }

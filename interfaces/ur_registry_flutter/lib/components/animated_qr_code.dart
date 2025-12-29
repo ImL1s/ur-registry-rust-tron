@@ -55,7 +55,10 @@ class AnimatedQRCode extends StatelessWidget {
   final UREncoder urEncoder;
   final AnimatedQRCodeStyle style;
 
-  const AnimatedQRCode({super.key, required this.urEncoder, this.style = const AnimatedQRCodeStyle.factory()});
+  const AnimatedQRCode(
+      {super.key,
+      required this.urEncoder,
+      this.style = const AnimatedQRCodeStyle.factory()});
 
   @override
   Widget build(BuildContext context) {

@@ -13,7 +13,7 @@ typedef NativeGetKeysLen = Pointer<Response> Function(Pointer<Void>);
 typedef GetKeysLen = Pointer<Response> Function(Pointer<Void>);
 
 class CryptoMultiAccounts extends NativeObject {
-  CryptoMultiAccounts(Pointer<Void> object) : super(){
+  CryptoMultiAccounts(Pointer<Void> object) : super() {
     nativeObject = object;
   }
 

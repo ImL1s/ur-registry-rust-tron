@@ -6,11 +6,12 @@ import 'package:ur_registry_flutter/ffi/ffi_factory.dart';
 import 'dart:io' show Platform;
 
 class UrRegistryFlutter {
-  static DynamicLibrary load(){
+  static DynamicLibrary load() {
     return Platform.isAndroid
         ? DynamicLibrary.open("libur_registry_ffi.so")
         : DynamicLibrary.process();
   }
+
   static const MethodChannel _channel = MethodChannel('ur_registry_flutter');
 
   static Future<String?> get platformVersion async {
